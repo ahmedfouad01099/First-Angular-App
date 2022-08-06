@@ -1,0 +1,94 @@
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+    <div class="item">
+      <a>
+        <img
+          src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+          width="60"
+          height="60"
+        />
+        <h6 style="margin-top: 10px">All Products</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img
+          src="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg"
+          width="60"
+          height="60"
+        />
+        <h6 style="margin-top: 10px">Electronics</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img
+          src="https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
+          width="60"
+          height="60"
+        />
+        <h6 style="margin-top: 10px">Fashion</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img
+          src="https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg"
+          width="60"
+          height="60"
+        />
+        <h6 style="margin-top: 10px">Jewllery</h6>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row" style="justify-content: center">
+    <ng-container *ngFor="let item of productList">
+      <div
+        class="card col-md-3 m-4"
+        style="position: relative; align-items: center; padding-top: 10px"
+      >
+        <img
+          src="{{ item.image }}"
+          alt="image"
+          style="width: 150px; height: 150px"
+        />
+        <h5
+          style="
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100ch;
+          "
+        >
+          {{ item.title }}
+        </h5>
+        <p
+          style="
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100ch;
+          "
+        >
+          {{ item.description }}
+        </p>
+        <p style="margin-bottom: 50px">
+          <strong>Price: </strong>
+          {{ item.price }}
+        </p>
+        <button
+          style="position: absolute; bottom: 10px; width: 90%"
+          class="btn btn-primary"
+          (click)="addToCart(item)"
+        >
+          Add to cart
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>
